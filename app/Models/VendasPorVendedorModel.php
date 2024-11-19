@@ -10,14 +10,38 @@ class VendasPorVendedorModel extends Model
     protected $connection = 'mapos';
     protected $table = 'vendas';
 
-    public static function VendasPorVendedor()
+    public static function VendasPorVendedor($dataInicio = null, $dataFim = null)
     {
-        return DB::connection('mapos')
+        $query = DB::connection('mapos')
             ->table('vendas')
             ->join('usuarios', 'vendas.usuarios_id', '=', 'usuarios.idUsuarios')
-            ->select('usuarios.nome as vendedor', DB::raw('SUM(vendas.valorTotal) as valor_total'))
-            ->groupBy('usuarios.nome')
-            ->get();
+            ->select(
+                'usuarios.nome as vendedor', // Nome do vendedor
+                DB::raw('SUM(vendas.valorTotal) as valor_total') // Soma do valorTotal para cada vendedor
+            )
+            ->groupBy('usuarios.nome'); // Agrupa pelo nome do vendedor
+
+        // Aplica o filtro de data de início, se fornecido
+        if ($dataInicio) {
+            $query->where('vendas.dataVenda', '>=', $dataInicio);
+        }
+
+        // Aplica o filtro de data de fim, se fornecido
+        if ($dataFim) {
+            $query->where('vendas.dataVenda', '<=', $dataFim);
+        }
+
+        return $query->get(); // Retorna os resultados
     }
-    
+
+    // public static function VendasPorVendedor()
+    // {
+    //     return DB::connection('mapos')
+    //         ->table('vendas')
+    //         ->join('usuarios', 'vendas.usuarios_id', '=', 'usuarios.idUsuarios')
+    //         ->select('usuarios.nome as vendedor', DB::raw('SUM(vendas.valorTotal) as valor_total'))
+    //         ->groupBy('usuarios.nome')
+    //         ->get();
+    // }
+
 }
