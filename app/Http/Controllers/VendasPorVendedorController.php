@@ -9,14 +9,19 @@ class VendasPorVendedorController extends Controller
 {
     public function index(Request $request)
     {
-        // Captura os parâmetros de data do formulário
+        // Obter filtros de data, caso existam
         $dataInicio = $request->input('data_inicio');
         $dataFim = $request->input('data_fim');
-
-        // Chama o método do modelo com os filtros de data
+    
+        // Obter dados de vendas com os filtros aplicados
         $vendas = VendasPorVendedorModel::VendasPorVendedor($dataInicio, $dataFim);
+    
+        // Processar os dados para o gráfico
+        $vendedores = $vendas->pluck('vendedor')->toArray();
+        $valoresVendas = $vendas->pluck('valor_total')->toArray();
+    
+        // Passar os dados para a view
+        return view('vendas', compact('vendedores', 'valoresVendas', 'vendas'));
+    }    
 
-        // Retorna os dados para a view
-        return view('vendas', compact('vendas'));
-    }
 }

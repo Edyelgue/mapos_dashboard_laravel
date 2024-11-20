@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>O Esplendor Cell</title>
 </head>
 
 <body>
     <div class="navbar bg-base-100">
         <div class="navbar-start">
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -32,23 +33,11 @@
                     </li>
                     <li><a>Item 3</a></li>
                 </ul>
-            </div>
-            <a class="btn btn-ghost text-xl">daisyUI</a>
+            </div> -->
+            <a class="btn btn-ghost text-xl">O Esplendor Cell</a>
         </div>
         <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-                <li><a>Item 1</a></li>
-                <li>
-                    <details>
-                        <summary>Parent</summary>
-                        <ul class="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
-                        </ul>
-                    </details>
-                </li>
-                <li><a>Item 3</a></li>
-            </ul>
+            <h1 class="font-extrabold text-4xl">Dashboard de Vendas</h1>
         </div>
         <div class="navbar-end">
             <a class="btn">Button</a>
