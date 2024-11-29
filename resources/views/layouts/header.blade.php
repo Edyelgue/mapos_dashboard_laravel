@@ -18,6 +18,6 @@
         <div class="navbar-center hidden lg:flex flex-col items-center">
             <h1 class="font-extrabold  text-4xl">O Esplendor Cell</h1>
             <br>
-            <h1 class="font-extrabold text-2xl">Dashboard de Vendas por Vendedor(a)</h1>
+            <h1 class="font-extrabold text-2xl">Vendas por Vendedor(a)</h1>
         </div>
     </div>
