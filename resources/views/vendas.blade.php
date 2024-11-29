@@ -10,15 +10,13 @@
                 <div class="flex flex-col">
                     <label for="data_inicio" class="mb-1">Data Início</label>
                     <input type="date" id="data_inicio" name="data_inicio" class="form-control w-full"
-                           value="{{ request('data_inicio') }}" required placeholder="Teste">
+                           value="{{ request('data_inicio') }}" required>
                 </div>
 
                 <div class="flex flex-col">
                     <label for="data_fim" class="mb-1">Data Fim</label>
                     <input type="date" id="data_fim" name="data_fim" class="form-control w-full"
-                           value="{{ request('data_fim') }}" required
-
-                           ="Teste">
+                           value="{{ request('data_fim') }}" required>
                 </div>
 
                 <div class="md:col-span-2 flex justify-center">
