@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-base-300 border">
         <div class="navbar-start">
         </div>
         <div class="navbar-center hidden lg:flex flex-col items-center">

@@ -1,7 +1,7 @@
 @include('layouts.header')
 <div class="flex flex-col lg:flex-row w-full">
 
-    <div class="card bg-base-300 rounded-box grid h-full lg:w-1/6 flex-grow place-items-center mx-2 my-2 p-5">
+    <div class="card bg-white border shadow-lg rounded-box grid h-full lg:w-1/6 flex-grow place-items-center mx-2 my-2 p-5">
         <h1 class="font-bold text-1xl">Selecione o Período</h1>
         <div class="container mt-5 w-full">
 
@@ -9,25 +9,24 @@
 
                 <div class="flex flex-col">
                     <label for="data_inicio" class="mb-1">Data Início</label>
-                    <input type="date" id="data_inicio" name="data_inicio" class="form-control w-full"
-                           value="{{ request('data_inicio') }}" required>
+                    <input type="date" id="data_inicio" name="data_inicio" class="text-sm form-control w-full"
+                           value="{{ request('data_inicio') }}" required">
                 </div>
 
                 <div class="flex flex-col">
                     <label for="data_fim" class="mb-1">Data Fim</label>
-                    <input type="date" id="data_fim" name="data_fim" class="form-control w-full"
+                    <input type="date" id="data_fim" name="data_fim" class="text-sm form-control w-full"
                            value="{{ request('data_fim') }}" required>
                 </div>
 
                 <div class="md:col-span-2 flex justify-center">
-                    <button type="submit" class="btn btn-primary w-full md:w-auto">Filtrar</button>
+                    <button type="submit" class="btn btn-info text-gray-100 font-bold w-full md:w-auto">Filtrar</button>
                 </div>
             </form>
         </div>
     </div>
 
-
-    <div class="card bg-base-300 rounded-box h-full lg:w-5/6 flex-grow place-items-center m-2">
+    <div class="card bg-white border shadow-lg mb-4 rounded-box h-full lg:w-5/6 flex-grow place-items-center m-2" data-theme="light">
         <div class="container mt-5 w-full">
             <canvas id="vendasChart"></canvas>
         </div>
@@ -59,8 +58,8 @@
             datasets: [{
                 label: 'Total de Vendas (R$)',
                 data: vendasFormatted.map(item => item.value), // Passa os valores reais (não formatados como moeda)
-                backgroundColor: '#4e73df80', // Cor de fundo das barras
-                borderColor: '#2e59d9', // Cor da borda das barras
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Cor de fundo das barras
+                borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda das barras
                 borderWidth: 1
             }]
         },
@@ -99,7 +98,7 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    grace: '10%',
+                    grace: '15%',
                     ticks: {
                         callback: function (value) {
                             // Formata os valores do eixo Y como moeda
