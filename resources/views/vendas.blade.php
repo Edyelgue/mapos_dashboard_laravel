@@ -2,19 +2,23 @@
 <div class="flex flex-col lg:flex-row w-full">
 
     <div class="card bg-base-300 rounded-box grid h-full lg:w-1/6 flex-grow place-items-center mx-2 my-2 p-5">
+        <h1 class="font-bold text-1xl">Selecione o Período</h1>
         <div class="container mt-5 w-full">
+
             <form method="GET" action="{{ route('vendas.index') }}" class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
                 <div class="flex flex-col">
                     <label for="data_inicio" class="mb-1">Data Início</label>
                     <input type="date" id="data_inicio" name="data_inicio" class="form-control w-full"
-                           value="{{ request('data_inicio') }}" required>
+                           value="{{ request('data_inicio') }}" required placeholder="Teste">
                 </div>
 
                 <div class="flex flex-col">
                     <label for="data_fim" class="mb-1">Data Fim</label>
                     <input type="date" id="data_fim" name="data_fim" class="form-control w-full"
-                           value="{{ request('data_fim') }}" required>
+                           value="{{ request('data_fim') }}" required
+
+                           ="Teste">
                 </div>
 
                 <div class="md:col-span-2 flex justify-center">
