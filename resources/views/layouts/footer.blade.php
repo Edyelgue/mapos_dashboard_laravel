@@ -1,11 +1,11 @@
 <footer class="footer footer-center bg-base-200 text-base-content rounded p-10">
-    <nav class="grid grid-flow-col gap-4">
+{{--    <nav class="grid grid-flow-col gap-4">
         <a class="link link-hover">About us</a>
         <a class="link link-hover">Contact</a>
         <a class="link link-hover">Jobs</a>
         <a class="link link-hover">Press kit</a>
-    </nav>
-    <nav>
+    </nav>--}}
+{{--    <nav>
         <div class="grid grid-flow-col gap-4">
             <a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
@@ -29,10 +29,17 @@
                 </svg>
             </a>
         </div>
-    </nav>
+    </nav>--}}
     <aside>
-        <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+        <p>Copyright © O Esplendor Cell <span id="year"></span> - Todos os Direitos Reservados</p>
     </aside>
+
+
+
 </footer>
 </body>
 </html>
+<script>
+    // Define o ano dinamicamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
