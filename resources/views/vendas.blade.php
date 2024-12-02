@@ -7,13 +7,13 @@
 
             <form method="GET" action="{{ route('vendas.index') }}" class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                <div class="flex flex-col">
+                <div class="flex flex-col border rounded">
                     <label for="data_inicio" class="mb-1">Data Início</label>
                     <input type="date" id="data_inicio" name="data_inicio" class="text-sm form-control w-full"
                            value="{{ request('data_inicio') }}" required">
                 </div>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col border rounded">
                     <label for="data_fim" class="mb-1">Data Fim</label>
                     <input type="date" id="data_fim" name="data_fim" class="text-sm form-control w-full"
                            value="{{ request('data_fim') }}" required>
