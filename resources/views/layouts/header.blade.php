@@ -12,12 +12,11 @@
 </head>
 
 <body>
-    <div class="navbar bg-base-300 border">
-        <div class="navbar-start">
+    <main class="mx-4">
+        <div class="navbar bg-yellow-300 shadow-md card mt-1">
+            <div class="navbar-center lg:flex flex-col items-center">
+                <h1 class="font-extrabold text-md lg:text-4xl">O Esplendor Cell</h1>
+                <br>
+                <h1 class="font-extrabold text-sm lg:text-lg">Vendas por Vendedor(a)</h1>
+            </div>
         </div>
-        <div class="navbar-center hidden lg:flex flex-col items-center">
-            <h1 class="font-extrabold  text-4xl">O Esplendor Cell</h1>
-            <br>
-            <h1 class="font-extrabold text-2xl">Vendas por Vendedor(a)</h1>
-        </div>
-    </div>
