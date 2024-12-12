@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('cell.png') }}">
     <title>O Esplendor Cell</title>
 </head>
 
