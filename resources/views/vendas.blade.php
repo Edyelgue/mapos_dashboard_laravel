@@ -1,6 +1,8 @@
+<x-app-layout>
+    <x-slot name="header">
+    </x-slot>
 @include('layouts.header')
 <div class="flex flex-col lg:flex-row w-full">
-
     <div
         class="card bg-white border border-neutral-950 shadow-lg rounded-box grid h-full lg:w-1/6 flex-grow place-items-center mx-2 my-2 p-5">
         <h1 class="font-bold text-1xl">Selecione o Período</h1>
@@ -117,4 +119,5 @@
     });
 </script>
 </main>
+</x-app-layout>
 @include('layouts.footer')
