@@ -28,7 +28,7 @@
             <h1 class="font-bold text-3xl mt-4">Vendas</h1>
             
             <!-- Filtro -->
-            <div class="h-full m-4 px-4 w-full items-center justify-center text-center">
+            <div class="h-full px-4 w-full items-center justify-center text-center mt-4">
                     <div class="flex justify-between">
                         <form method="GET" action="{{ route('vendas.index') }}" class="flex items-center space-x-4 border border-yellow-400 rounded-md p-4 shadow-lg">
 
@@ -57,29 +57,24 @@
                         </p>
                     </div>
 
-                    <div class="w-1/2 mx-4 rounded-lg border shadow-md p-2" data-theme="nord">
+                    <div class="w-1/2 ml-4 rounded-lg border shadow-md p-2" data-theme="nord">
                         <h2 class="font-semibold sm:text-xl">Total Vendas</h2>
                         <p class="font-bold sm:text-2xl">
                             R$ {{ number_format($valorTotal, 2, ',', '.') ?? 'Nenhum dado disponível' }}
                         </p>
                     </div>
-
-                    <!-- <div class="w-1/3 rounded-lg border shadow-md p-2" data-theme="nord">
-                        <h2 class="font-semibold sm:text-xl">Vendas</h2>
-                        <p class="font-bold sm:text-2xl">teste</p>
-                    </div> -->
                 </div>
 
                 <!-- Gráficos -->
                 <div class="mt-4 2xl:flex">
-                    <!-- <div class="my-4 2xl:my-0 2xl:w-1/1 h-64 sm:h-96 rounded-lg 2xl:mr-2 border shadow-md items-center justify-center flex"
+                    <div class="my-4 2xl:my-0 2xl:w-1/2 h-64 sm:h-96 rounded-lg 2xl:mr-2 border shadow-md items-center justify-center flex"
                         data-theme="nord">
+                        <canvas id="vendasChart"></canvas>
 
-                    </div> -->
+                    </div>
 
                     <div class="my-4 2xl:my-0 2xl:w-1/2 h-64 sm:h-96 rounded-lg 2xl:ml-2 border shadow-md items-center justify-center flex"
                         data-theme="nord">
-                        <canvas id="vendasChart"></canvas>
                     </div>
                 </div>
             </div>
