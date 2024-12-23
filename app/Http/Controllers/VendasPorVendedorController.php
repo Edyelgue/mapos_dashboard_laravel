@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\VendasPorVendedorModel;
+use App\Models\TotalVendidoModel;
 use Illuminate\Http\Request;
 
 class VendasPorVendedorController extends Controller
@@ -12,16 +13,23 @@ class VendasPorVendedorController extends Controller
         // Obter filtros de data, caso existam
         $dataInicio = $request->input('data_inicio');
         $dataFim = $request->input('data_fim');
-    
+
         // Obter dados de vendas com os filtros aplicados
         $vendas = VendasPorVendedorModel::VendasPorVendedor($dataInicio, $dataFim);
-    
+
         // Processar os dados para o gráfico
         $vendedores = $vendas->pluck('vendedor')->toArray();
         $valoresVendas = $vendas->pluck('valor_total')->toArray();
-    
-        // Passar os dados para a view
-        return view('vendas', compact('vendedores', 'valoresVendas', 'vendas'));
-    }    
+        $valorTotal = $vendas->sum('valor_total');
+        $vendasRealizadas = $vendas->count();
 
+        // Passar os dados para a view
+        return view('vendas', compact(
+            'vendedores', 
+            'valoresVendas', 
+            'vendas', 
+            'valorTotal', 
+            'vendasRealizadas'
+        ));
+    }
 }

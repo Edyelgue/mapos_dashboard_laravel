@@ -33,15 +33,4 @@ class VendasPorVendedorModel extends Model
 
         return $query->get(); // Retorna os resultados
     }
-
-    // public static function VendasPorVendedor()
-    // {
-    //     return DB::connection('mapos')
-    //         ->table('vendas')
-    //         ->join('usuarios', 'vendas.usuarios_id', '=', 'usuarios.idUsuarios')
-    //         ->select('usuarios.nome as vendedor', DB::raw('SUM(vendas.valorTotal) as valor_total'))
-    //         ->groupBy('usuarios.nome')
-    //         ->get();
-    // }
-
 }
